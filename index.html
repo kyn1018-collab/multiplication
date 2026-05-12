@@ -12,6 +12,7 @@
         <div id="start-screen" class="screen active">
             <h1>🏎️ 수학 곱셈 레이싱 🏁</h1>
             <p>정답 게이트를 통과하며 질주하세요!</p>
+            <input type="text" id="student-name" placeholder="학생 이름을 입력하세요" autocomplete="off" />
             <div class="difficulty-buttons">
                 <button data-level="low">하 (2자리 × 1자리)</button>
                 <button data-level="mid">중 (3자리 × 1자리)</button>
@@ -38,8 +39,24 @@
 
         <!-- End Screen -->
         <div id="end-screen" class="screen">
-            <h2>레이싱 종료!</h2>
-            <p>최종 점수: <span id="final-score">0</span>점</p>
+            <h2>🏆 레이싱 시상식 🏆</h2>
+            <p class="racer-title"><span id="student-name-display"></span> 레이서의 기록</p>
+            
+            <div id="podium">
+                <div class="podium-step step-1">
+                    <div class="medal">1차 도전</div>
+                    <div class="score" id="score-1">-</div>
+                </div>
+                <div class="podium-step step-2">
+                    <div class="medal">2차 도전</div>
+                    <div class="score" id="score-2">-</div>
+                </div>
+                <div class="podium-step step-3">
+                    <div class="medal">3차 도전</div>
+                    <div class="score" id="score-3">-</div>
+                </div>
+            </div>
+
             <p id="feedback-message"></p>
             <button id="restart-btn">다시 하기</button>
         </div>

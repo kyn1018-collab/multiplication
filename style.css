@@ -220,7 +220,64 @@ h2 { font-size: 3rem; margin-bottom: 1rem; color: #fff; }
     transition: opacity 0.5s;
 }
 
-#end-screen p {
+#student-name {
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.racer-title {
     font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f9d342;
+    font-weight: bold;
+}
+
+#podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+    height: 150px;
+}
+
+.podium-step {
+    background: linear-gradient(135deg, #444, #222);
+    border: 3px solid #f9d342;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.podium-step .medal {
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-bottom: 10px;
+    color: #fff;
+}
+
+.podium-step .score {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #f9d342;
+}
+
+.step-1 { height: 140px; }
+.step-2 { height: 110px; }
+.step-3 { height: 80px; }
+
+#end-screen p#feedback-message {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
 }

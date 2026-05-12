@@ -13,9 +13,16 @@ const ui = {
     gatesContainer: document.getElementById('gates-container'),
     track: document.getElementById('track'),
     hint: document.getElementById('hint-display'),
-    finalScore: document.getElementById('final-score'),
-    feedbackMessage: document.getElementById('feedback-message')
+    feedbackMessage: document.getElementById('feedback-message'),
+    studentNameInput: document.getElementById('student-name'),
+    studentNameDisplay: document.getElementById('student-name-display'),
+    score1: document.getElementById('score-1'),
+    score2: document.getElementById('score-2'),
+    score3: document.getElementById('score-3')
 };
+
+let attemptScores = [];
+let currentStudentName = '';
 
 let gameState = {
     isPlaying: false,
@@ -144,6 +151,12 @@ function spawnGates() {
 }
 
 function startGame(level) {
+    const name = ui.studentNameInput.value.trim() || '이름 없는';
+    if (name !== currentStudentName) {
+        currentStudentName = name;
+        attemptScores = []; // reset scores for new student
+    }
+
     initAudio();
     
     gameState.level = level;
@@ -273,7 +286,14 @@ function endGame() {
     screens.game.classList.remove('active');
     screens.end.classList.add('active');
     
-    ui.finalScore.textContent = gameState.score;
+    // 기록 저장
+    attemptScores.push(gameState.score);
+    
+    // 시상식 UI 업데이트
+    ui.studentNameDisplay.textContent = currentStudentName;
+    ui.score1.textContent = attemptScores[0] !== undefined ? attemptScores[0] + '점' : '-';
+    ui.score2.textContent = attemptScores[1] !== undefined ? attemptScores[1] + '점' : '-';
+    ui.score3.textContent = attemptScores[2] !== undefined ? attemptScores[2] + '점' : '-';
     
     if (gameState.score >= 1000) {
         ui.feedbackMessage.textContent = '대단해요! 완벽한 레이서네요! 🏆';
