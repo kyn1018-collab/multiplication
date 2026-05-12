@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>수학 곱셈 레이싱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>🏎️ 수학 곱셈 레이싱 🏁</h1>
+            <p>정답 게이트를 통과하며 질주하세요!</p>
+            <div class="difficulty-buttons">
+                <button data-level="low">하 (2자리 × 1자리)</button>
+                <button data-level="mid">중 (3자리 × 1자리)</button>
+                <button data-level="high">상 (3자리 × 2자리)</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div id="hud">
+                <div id="score-display">점수: <span id="score">0</span></div>
+                <div id="time-display">시간: <span id="time">60</span>초</div>
+                <div id="life-display">❤️❤️❤️</div>
+            </div>
+            <div id="problem-display"></div>
+            
+            <div id="track">
+                <div id="road-lines"></div>
+                <div id="player-car">🏎️</div>
+                <div id="gates-container"></div>
+            </div>
+            <div id="hint-display"></div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen">
+            <h2>레이싱 종료!</h2>
+            <p>최종 점수: <span id="final-score">0</span>점</p>
+            <p id="feedback-message"></p>
+            <button id="restart-btn">다시 하기</button>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
