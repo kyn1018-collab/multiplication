@@ -152,8 +152,8 @@ function startGame(level) {
     gameState.time = 60;
     gameState.lives = 3;
     
-    // Set speed based on difficulty (4배 느리게 변경)
-    gameState.gateSpeed = level === 'low' ? 1 : (level === 'mid' ? 1.25 : 1.5);
+    // Set speed based on difficulty (3배 느리게 변경)
+    gameState.gateSpeed = level === 'low' ? 1.33 : (level === 'mid' ? 1.67 : 2);
     gameState.baseSpeed = gameState.gateSpeed;
     
     gameState.gates.forEach(g => g.el.remove());
